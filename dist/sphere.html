@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Visualizador esférico</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+  <script defer src="./javascripts/sphere.bundle.js"></script><link href="./stylesheets/sphere.css" rel="stylesheet"></head>
+
+  <body>
+    <div class="overlay-container visible" id="overlay-container">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+  </div>
+  <div class="overlay-container-wala visible" id="overlay-container-wala">
+
+
+    <div class="flecha-cont"><img src="data:image/png;base64,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"></div>
+    <div class="centered-text-wala">
+      Bienvenidos a La Vecindad Freire <br>
+      Hacé click para recorrer el edificio
+    </div>
+    <div class="flecha-cont"><img src="data:image/png;base64,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"></div>
+    
+  </div>
+  <div>
+    <div class="container-top" id="container">
+
+      <div class="container-top-buttons">
+        <div class="btn-menu" id="btn-menu"></div>
+        <div class="btn-gyros off" id="btn-gyros"></div>
+      </div>
+
+    </div></div>
+    <div class="container-img" id="container-img">
+      <img class="img-background" id="img-background">
+      <button id="btn-close-map" class="btn-close-map" style="top: 5%; right: 5%;"></button>
+      <button id="but1" class="button-sphere" style="bottom: 10%; right: 42%;">1</button>
+      <button id="but2" class="button-sphere" style="bottom: 16%; left: 46%;">2</button>
+      <button id="but3" class="button-sphere" style="bottom: 28%; left: 49%;">3</button>
+      <button id="but4" class="button-sphere" style="bottom: 40%; left: 49%;">4</button>
+      <button id="but5" class="button-sphere" style="bottom: 49%; left: 49%;">5</button>
+      <button id="but6" class="button-sphere" style="top: 20%; left: 53%;">6</button>
+      <button id="but7" class="button-sphere" style="top: 39%; left: 59%;">7</button>
+      <button id="but8" class="button-sphere" style="top: 48%; left: 59%;">8</button>
+      <button id="but9" class="button-sphere" style="bottom: 30%; right: 23%;">9</button>
+      <button id="but10" class="button-sphere" style="bottom: 38%; right: 21%;">10</button>
+      <button id="but11" class="button-sphere" style="bottom: 27%; left: 40%;">11</button>
+      <button id="but12" class="button-sphere" style="bottom: 38%; left: 28%;">12</button>
+      <button id="but13" class="button-sphere" style="bottom: 36%; left: 45%;">13</button>
+      <button id="but14" class="button-sphere" style="bottom: 22%; left: 30.5%;">14</button>
+      <button id="but15" class="button-sphere" style="bottom: 10%; left: 20%;">15</button>    
+      <button id="but16" class="button-sphere" style="top: 46%; left: 55%;">16</button>
+      <button id="but17" class="button-sphere" style="top: 55%; left: 59%;">17</button>
+    
+  </div>
+
+
+</div>
+
+    <button class="bottom-right-button" id="bottom-right-button">PLANO</button>
+
+
+  </body>
+
+</html>
+

@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-    <body>
-        <main></main>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <title>La Vecindad - Freire</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+
+  <body>
+    <video autoplay loop muted playsinline>
+      <source
+        src="../Resources/video/Intro_compilado_v02.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <div class="top-left-image">
+      <img src="../Resources/icons/logo.png" />
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="content-container">
+      <div class="content-container-general">
+        <div class="content">
+          <h1>LA VECINDAD</h1>
+          <h2>Freire</h2>
+        </div>
+        <div class="image-container">
+          <img src="../Resources/icons/LVF-banner.png" />
+        </div>
+      </div>
+
+      <div class="below-container">
+        <p>
+          Bienvenidos a la vecindad Freire. <br />
+          Hacé click para recorrer el edificio.
+        </p>
+        <button id="button-explore" class="button-explore">Experiencia</button>
+      </div>
+    </div>
+  </body>
 </html>

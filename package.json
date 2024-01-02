@@ -1,22 +1,43 @@
 {
   "name": "escena-basica-oculus",
   "version": "1.0.0",
-  "description": "",
-  "main": "escena.js",
+  "main": "index.html",
   "dependencies": {
-    "three": "^0.144.0"
+    "aws-sdk": "^2.1472.0",
+    "css-loader": "^6.7.3",
+    "html-loader": "^4.2.0",
+    "mini-css-extract-plugin": "^2.7.6",
+    "three": "^0.144.0",
+    "ua-parser-js": "^1.0.37"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
-    "webpack": "^5.75.0",
+    "webpack": "^5.79.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
   },
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
     "dev": "npx webpack serve"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joakjoak/escena-basica.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joakjoak/escena-basica/issues"
+  },
+  "homepage": "https://github.com/joakjoak/escena-basica#readme",
+  "description": ""
 }

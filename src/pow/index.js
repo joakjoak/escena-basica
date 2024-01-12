@@ -1,25 +1,11 @@
-// import { startVideo } from "./scripts/startScene";
-
 import "../../stylesheets/basic.scss";
 
-// const container = document.getElementById("container-menu");
-// const goButton = document.getElementById("go-button");
-// const exterior = document.getElementById("exterior-button");
-
-// export function showContainer() {
-//   container.style.display = "block";
-// }
-
-// goButton.addEventListener("click", () => {
-//   startVideo("testfolder/Freire_v02.mp4");
-//   container.style.display = "none";
-// });
-
-// exterior.addEventListener("click", () => {
-//   window.location.href = getAbsolutePath() + "/exterior.html";
-// });
-
+const closeVideoButton = document.getElementById("closeVideoButton");
+const videoPop = document.getElementById("videoPop");
+const videoDiv = document.getElementById("video-div");
 const butExplore = document.getElementById("button-explore");
+const butVideo = document.getElementById("button-video");
+
 butExplore.addEventListener("click", () => {
   window.location.href = getAbsolutePath() + "/sphere.html?l=exterior?1";
 });
@@ -33,3 +19,13 @@ function getAbsolutePath() {
       ((loc.pathname + loc.search + loc.hash).length - pathName.length)
   );
 }
+
+butVideo.addEventListener("click", () => {
+  videoDiv.style.visibility = "visible";
+  videoPop.play();
+});
+
+closeVideoButton.addEventListener("click", () => {
+  videoPop.pause();
+  videoDiv.style.visibility = "hidden";
+});

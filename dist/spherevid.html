@@ -1,5 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<script defer src="./javascripts/spherevid.bundle.js"></script></head>
+<body>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <a-scene>
+    <a-assets>
+      <video id="my-video" crossorigin="anonymous" autoplay loop="true" src="assets/360_v01.mp4"></video>
+    </a-assets>
+  
+    <a-videosphere src="#my-video"></a-videosphere>
+  
+    <!-- You can add other A-Frame entities, components, or controls as needed -->
+  
+  </a-scene>
+  
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
 
   <head>
   <meta charset="UTF-8">
@@ -11,7 +35,7 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     
-  <script defer src="./javascripts/spherevid.bundle.js"></script><link href="./stylesheets/spherevid.css" rel="stylesheet"></head>
+  </head>
 
   <body>
     <div class="overlay-container" id="overlay-container">
@@ -59,4 +83,4 @@
   </body>
 
 </html>
-
+ -->

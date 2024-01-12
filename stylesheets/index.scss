@@ -122,7 +122,7 @@ body {
   }
 }
 
-.btn-menu, .sound, .btn-gyros, .btn-close{
+.btn-menu, .sound, .btn-close{
   width: 45px;
   height: 45px;
   cursor: pointer;
@@ -142,6 +142,18 @@ body {
 }
 
 .btn-gyros{
+  position: fixed;
+  top: 70px; /* Adjust the distance from the bottom as needed */
+  left: 10px; /* Adjust the distance from the right as needed */
+  border-radius: 25px;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  /* Add any other desired button styles */
+  background-size: cover;
+  border: none; /* Remove the border */
+  outline: none; /* Remove the outline */
+  background-color: #fff;
   background-image: url("..//Resources/gyro.png");
 }
 
@@ -307,6 +319,69 @@ body {
   /* Add any other desired button styles */
 }
 
+.bottom-left-button {
+  position: fixed;
+  bottom: 10px; /* Adjust the distance from the bottom as needed */
+  left: 10px; /* Adjust the distance from the right as needed */
+  background-color: #fff;
+  color: #d86450;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* Add any other desired button styles */
+}
+
+.up-button {
+  position: fixed;
+  bottom: 80px; /* Adjust the distance from the bottom as needed */
+  left: 10px; /* Adjust the distance from the right as needed */
+  border-radius: 25px;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  /* Add any other desired button styles */
+  background-image: url("..//Resources/icons/udown.png");
+  background-size: cover;
+  border: none; /* Remove the border */
+  outline: none; /* Remove the outline */
+  background-color: #fff;
+}
+
+.updown {
+  bottom: 20px;
+  background-image: url("..//Resources/icons/uup.png")
+}
+
+.audio-button {
+  position: fixed;
+  top: 10px; /* Adjust the distance from the bottom as needed */
+  left: 10px; /* Adjust the distance from the right as needed */
+  border-radius: 25px;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  /* Add any other desired button styles */
+  background-image: url("..//Resources/icons/audioOn.png");
+  background-size: cover;
+  border: none; /* Remove the border */
+  outline: none; /* Remove the outline */
+  background-color: #fff;
+}
+
+.audio-off {
+  /* Additional styles or modifications when audio is off */
+  background-image: url("../Resources/icons/audioOff.png");
+}
+
+.audio-on {
+  /* Additional styles or modifications when audio is on */
+  /* You can set a different background image here */
+  background-image: url("../Resources/icons/audioOn.png");
+}
+
+
+
 .container-img {
   position: fixed;
   background-color: rgba(255, 255, 255, 1); /* White with 50% alpha */
@@ -389,6 +464,7 @@ body {
   background-size: cover;
   background-color: rgb(255, 255, 255);
   border-radius: 100%;
+  border-style: solid;
   visibility: hidden;
 }
 
@@ -506,7 +582,6 @@ body {
   box-sizing: border-box;
   display: block;
   position: absolute;
-  top: 80px;
   width: 64px;
   height: 64px;
   margin: 8px;

@@ -125,7 +125,7 @@ body {
   }
 }
 
-.btn-menu, .sound, .btn-gyros, .btn-close{
+.btn-menu, .sound, .btn-close{
   width: 45px;
   height: 45px;
   cursor: pointer;
@@ -145,6 +145,18 @@ body {
 }
 
 .btn-gyros{
+  position: fixed;
+  top: 70px; /* Adjust the distance from the bottom as needed */
+  left: 10px; /* Adjust the distance from the right as needed */
+  border-radius: 25px;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  /* Add any other desired button styles */
+  background-size: cover;
+  border: none; /* Remove the border */
+  outline: none; /* Remove the outline */
+  background-color: #fff;
   background-image: url(../Redists/gyro.png);
 }
 
@@ -310,6 +322,69 @@ body {
   /* Add any other desired button styles */
 }
 
+.bottom-left-button {
+  position: fixed;
+  bottom: 10px; /* Adjust the distance from the bottom as needed */
+  left: 10px; /* Adjust the distance from the right as needed */
+  background-color: #fff;
+  color: #d86450;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* Add any other desired button styles */
+}
+
+.up-button {
+  position: fixed;
+  bottom: 80px; /* Adjust the distance from the bottom as needed */
+  left: 10px; /* Adjust the distance from the right as needed */
+  border-radius: 25px;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  /* Add any other desired button styles */
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAE9SURBVHja7NrBbYNQEIThGXeAS0hKcEqgBVpwUWmBFlwClIBLwCVMLg8pQnHs00OCfyULLeaAP+8+VoCT6Mhx0sEDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAaYXuwHdvDlgDe4rmA7Q9J069dn0nuR6qA64t89wBd2X6v8vqRpOpHUispkqaSTyVva59Lkk0qYPm3+9W2O8QiaHuW1Ej6SjLavkgaJD2SnHe9Bti+lh9/TzKWFhwljZKa8v2uF8F2tfhp1QbtblvAdiNp/uu6v5oLzkkee6yApbzH9dBT8tsWM0FNgO5J+WvLq0GVFninxP9rkT1UwFLW/bP+Lvv72m1wqlz+txfH1W+DiqPv/Obxc83R2Lwmxx0hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOEr8DABTjsNveLNWRQAAAABJRU5ErkJggg==);
+  background-size: cover;
+  border: none; /* Remove the border */
+  outline: none; /* Remove the outline */
+  background-color: #fff;
+}
+
+.updown {
+  bottom: 20px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAFaSURBVHja7NnhbcIwEIbhz1UXYIV0BDpCO0I6ArN0BkYgIzQjtCOUEWCEr3/sCllE5E8vNH5PQsiSJZLHd/YlJNtqOR7UeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0FY9//QMppU5SJ+ls+2vG/K2kzdz5/yUDPiR9Zoxbccjzt6soAdtHSWUl+xmrX5CGNe0B+zkAknZlvu1zxIWliL/GUkobSac8fMpZcW3eKdf/m+31ZEBezaFa5frm+4vNbwjKzNBjcLxRBi9VuWg1JXAlxV9tjxMl8hxx/C3VCA0TWVDGx8ibvyeARdK/bFChH0nfkiypz+Mujy2pi76eJZ4F6iwo3+PU8bi2h6Hfpihvfn1k57c4QNUa7y56/jYAqpt9j2597wVgP9EktQFQtcahre+ineA9Bu8EAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoKH4GAFDvGkaWuNXAAAAAAElFTkSuQmCC)
+}
+
+.audio-button {
+  position: fixed;
+  top: 10px; /* Adjust the distance from the bottom as needed */
+  left: 10px; /* Adjust the distance from the right as needed */
+  border-radius: 25px;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  /* Add any other desired button styles */
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAG3SURBVHja7Nc7aFRBFMbx3/okcU2MEtFGWREh4CMEVDBlwFprRYSIgp2VhY2VTYKFgYCIFoLYpYsRG21UTArRFGolCIqgFsZHFNGxOcIQwia762aL3IHLzJxh7vznu+fBLaWUtLKt0OJWABQALQeQUpr3WWRbi1KMB/EOV1BezBkppYYATuARtmS2/rBNY3uzAMq4hln8xLY56+24g+dYvxBArT7QFzfsxRH8wMpY24QN+I6j+I2hRnzgIsZxFxO4h08YRRs24w8q8arzeBoQcBCfsa9eBS6ExK/xJvpBnA35y8i/1Y3oh6N/gmc4Xq8CM9hRZWslZK5ktkN4j10xP42pRnygo0YfeYwPOBzzafQsZSJK+BX+Ad+yPLFkmXA1Psa4rVGAmRoPP4DuiBjYgxfVNqyqstaOS5FeSwE7EWFpnpt1YSQOfxm2Y3hQrwLD2Ii92B23uY3LWIOvcyDORGiey5JWH279z2LUj1d4iAF8yUK1O4D/+cEkrjejFnTiZigwmxedrEKOxWfoaGY1PIUpbM1s+3E/VNrZ7HIM6zI/OIm3uJrVgwUBSsV/QQFQACx7gL8DAFb+rhIZlqgtAAAAAElFTkSuQmCC);
+  background-size: cover;
+  border: none; /* Remove the border */
+  outline: none; /* Remove the outline */
+  background-color: #fff;
+}
+
+.audio-off {
+  /* Additional styles or modifications when audio is off */
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAIrSURBVHja7NfNi81RHMfx18/DaBjyEN2ZBY0kO9MUZvIH2Ao7krpYeNgrC1YoO4qGrCyVbDRiYjbGw6CYFCvlYYaizBh5ip/Nd+o0mXvvXPd2N3Pq1+90fueez/t8z/fh3CzPc41sszS4zQDUFSDLstYsy/qzLOuYclKe53V50IS7yNE35bw6AvSE+FsUpg1QYZuHLPpFDOMMDob4D3SVBP0PgN0YQCEZ24wh/AmAYrljrgagBRfxLXa4MvnWinch/gkLywFMNwo6Y9cd2IrvmJ2IX0Mb7uENTpddsYQFjuM6bqAXN2NX59CMFWHq9ljqfux8OGA2YRTrq7XA0TDxK7yOdxEHwvwtIQh7QzDHI4zgAZ5iV7UWGMPqEj9tx29sC9AcJ/Eea2POfgxW64RjcdblAEZCvCdCcgiHYk43xmvphGmbG6m8EI55OEB+hX/A1yRP1LwWHIv3B+zAzwTsY/SbywFU6wPF2G2O7cn4xvCBdYlzPi51BHNKsM3HiQirLKzVi88RigLgSfSX4GyE64sY24n+ai1wKhbrwy3cjrj+EsKXJ+WBI3iOZUnSGkVnrVJxE56F+Bi2BMzEMS3H0sQPHuJSLWvB+RAfwRWMR0Ja9Y8KeTWOYVGtAIpJee1OHGww0u5E24A7eIk1lVx6KgHoSjLdvklgC5Iw2xOVsAeLK711lbvVFKKq5bhQl5tTGYC+EB9AUyMAOiKO2+p1d8xm/prNADQa4O8A9rz8GefpGYYAAAAASUVORK5CYII=);
+}
+
+.audio-on {
+  /* Additional styles or modifications when audio is on */
+  /* You can set a different background image here */
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAG3SURBVHja7Nc7aFRBFMbx3/okcU2MEtFGWREh4CMEVDBlwFprRYSIgp2VhY2VTYKFgYCIFoLYpYsRG21UTArRFGolCIqgFsZHFNGxOcIQwia762aL3IHLzJxh7vznu+fBLaWUtLKt0OJWABQALQeQUpr3WWRbi1KMB/EOV1BezBkppYYATuARtmS2/rBNY3uzAMq4hln8xLY56+24g+dYvxBArT7QFzfsxRH8wMpY24QN+I6j+I2hRnzgIsZxFxO4h08YRRs24w8q8arzeBoQcBCfsa9eBS6ExK/xJvpBnA35y8i/1Y3oh6N/gmc4Xq8CM9hRZWslZK5ktkN4j10xP42pRnygo0YfeYwPOBzzafQsZSJK+BX+Ad+yPLFkmXA1Psa4rVGAmRoPP4DuiBjYgxfVNqyqstaOS5FeSwE7EWFpnpt1YSQOfxm2Y3hQrwLD2Ii92B23uY3LWIOvcyDORGiey5JWH279z2LUj1d4iAF8yUK1O4D/+cEkrjejFnTiZigwmxedrEKOxWfoaGY1PIUpbM1s+3E/VNrZ7HIM6zI/OIm3uJrVgwUBSsV/QQFQACx7gL8DAFb+rhIZlqgtAAAAAElFTkSuQmCC);
+}
+
+
+
 .container-img {
   position: fixed;
   background-color: rgba(255, 255, 255, 1); /* White with 50% alpha */
@@ -392,6 +467,7 @@ body {
   background-size: cover;
   background-color: rgb(255, 255, 255);
   border-radius: 100%;
+  border-style: solid;
   visibility: hidden;
 }
 
@@ -509,7 +585,6 @@ body {
   box-sizing: border-box;
   display: block;
   position: absolute;
-  top: 80px;
   width: 64px;
   height: 64px;
   margin: 8px;

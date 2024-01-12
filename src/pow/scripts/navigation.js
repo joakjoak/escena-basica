@@ -40,14 +40,13 @@ export function createNavigationSystem(
         try {
           console.log(child.name);
 
-          if (child.name === "coll") {
+          if (child.name.includes("coll")) {
             child.material = new THREE.MeshBasicMaterial({
               transparent: true,
               opacity: 0,
             });
 
             raycasteableObjects.push(child);
-            getRaycasteableObjects(raycasteableObjects);
           } else {
             if (child.name.includes("Punto_")) {
               if (child.name === "Punto_" + number) {
@@ -78,6 +77,8 @@ export function createNavigationSystem(
               puntos.push(newPoint);
             }
           }
+
+          getRaycasteableObjects(raycasteableObjects);
         } catch (error) {
           console.log(error);
         }
@@ -90,13 +91,16 @@ export function createNavigationSystem(
 
   pngCirculoMat = new THREE.MeshBasicMaterial({
     transparent: true,
-    map: pngCirculoText,
+    // map: pngCirculoText,
     color: "white",
     opacity: 0.8,
   });
 
-  pngCirculoObj = new THREE.Mesh(pngCirculo, pngCirculoMat);
-  pngCirculoObj.rotation.x = -Math.PI / 2;
+  var pngSphereGeo = new THREE.SphereGeometry(0.2, 16, 16);
+  var normalMat = new THREE.MeshNormalMaterial();
+
+  pngCirculoObj = new THREE.Mesh(pngSphereGeo, pngCirculoMat);
+  // pngCirculoObj.rotation.x = -Math.PI / 2;
   pngCirculoObj.renderOrder = 0 || 999;
   pngCirculoObj.material.depthTest = false;
   pngCirculoObj.material.depthWrite = false;
@@ -107,7 +111,7 @@ export function createNavigationSystem(
 
 export function raycasterMove(intersects, scene) {
   if (intersects.length > 0) {
-    if (intersects[0].object.name === "coll") {
+    if (intersects[0].object.name.includes("coll")) {
       scene.add(pngCirculoObj);
       pngCirculoObj.position.copy(intersects[0].point);
     } else {

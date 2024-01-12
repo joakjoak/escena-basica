@@ -21,6 +21,10 @@ const container = document.getElementById("container");
 
 const topContainer = document.getElementById("overlay-container");
 
+const listener = new THREE.AudioListener();
+const audioBackground = new THREE.Audio(listener);
+const audioLoader = new THREE.AudioLoader();
+
 const fullPath = new URLSearchParams(window.location.search).get("l");
 let place = fullPath.split("?")[0];
 let number = fullPath.split("?")[1];
@@ -199,29 +203,19 @@ function init() {
   );
   camera.rotation.order = "YXZ";
   camera.layers.enable(1); // render left view when no stereo available
-
-  // const prevRotationX = localStorage.getItem("cameraRotationX");
-  // const prevRotationY = localStorage.getItem("cameraRotationY");
-  // const prevRotationZ = localStorage.getItem("cameraRotationZ");
-  // const prevRotationW = localStorage.getItem("cameraRotationW");
-
-  // const quater = new THREE.Quaternion(
-  //   prevRotationX,
-  //   prevRotationY,
-  //   prevRotationZ,
-  //   prevRotationW
-  // );
-
-  // console.log(quater);
-
-  // // camera.setRotationFromQuaternion(quater);
-  // // camera.quaternion.normalize();
-  // // console.log(camera.quaternion);
+  camera.add(listener);
 
   var texture = texLoader.load("../imagenes/" + place + "/" + number + ".png");
 
   scene = new THREE.Scene();
   scene.background = new THREE.Color(0x101010);
+
+  audioLoader.load("../imagenes/T24.mp3", function (buffer) {
+    audioBackground.setBuffer(buffer);
+    audioBackground.setLoop(true);
+    audioBackground.setVolume(1);
+    audioBackground.play();
+  });
 
   // left
 
@@ -674,4 +668,52 @@ export function changeTexture(plac, num) {
       mesh2.material = newMat;
     }
   );
+}
+
+export function startVideo() {
+  changeOverlay();
+
+  var videoelement = document.createElement("video");
+  videoelement.setAttribute("id", "video");
+  videoelement.setAttribute("webkit-playsinline", "webkit-playsinline");
+  videoelement.setAttribute("playsinline", "playsinline");
+
+  videoelement.setAttribute("src", "../videos/exterior/360_v01.mp4");
+
+  videoelement.setAttribute("autoplay", "false");
+  videoelement.setAttribute("loop", "true");
+  videoelement.setAttribute("style", "display: none;");
+
+  videoelement.addEventListener("loadeddata", function () {
+    changeOverlay();
+    videoelement.play();
+  });
+
+  videoelement.load();
+  videoelement.muted = true;
+  var videoTexture = new THREE.VideoTexture(videoelement);
+  videoTexture.needsUpdate = true;
+  videoTexture.format = THREE.RGBAFormat;
+  const videoMaterial = new THREE.MeshBasicMaterial({
+    map: videoTexture,
+  });
+  mesh1.material = videoMaterial;
+  mesh2.material = videoMaterial;
+
+  // var newTex = texLoader.load(
+  //   "../imagenes/" + plac + "/" + num + ".png",
+  //   function () {
+  //     var newMat = new THREE.MeshBasicMaterial({ map: newTex });
+  //     mesh1.material = newMat;
+  //     mesh2.material = newMat;
+  //   }
+  // );
+}
+
+export function playPauseAudio() {
+  if (audioBackground.isPlaying) {
+    audioBackground.pause();
+  } else {
+    audioBackground.play();
+  }
 }
